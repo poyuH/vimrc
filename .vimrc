@@ -30,8 +30,9 @@ Bundle 'gmarik/vundle'
 " You can disable or add new ones here:
 
 " Plugins from github repos:
+
 " Auto pair
-Bundle 'plugin/auto-pairs.vim'
+Bundle 'jiangmiao/auto-pairs'
 " Python and PHP Debugger
 Bundle 'fisadev/vim-debug.vim'
 " Better file browser
@@ -87,6 +88,9 @@ Bundle 't9md/vim-choosewin'
 Bundle 'scrooloose/syntastic'
 " Paint css colors with the real color
 Bundle 'lilydjwg/colorizer'
+" No-BS Python code folding for Vim
+Bundle 'tmhedberg/SimpylFold'
+
 " Relative numbering of lines (0 is the current line)
 " (disabled by default because is very intrusive and can't be easily toggled
 " on/off. When the plugin is present, will always activate the relative 
@@ -127,6 +131,9 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" backspace over everything in insert mode
+set backspace=indent,eol,start 
 
 " tab length exceptions on some file types
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
@@ -193,7 +200,7 @@ nmap ,wr :RecurGrepFast <cword><CR>
 " use 256 colors when possible
 if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
 	let &t_Co = 256
-    colorscheme fisa'
+    colorscheme fisa
 else
     colorscheme delek
 endif
@@ -230,6 +237,9 @@ endif
 if !isdirectory(&undodir)
     call mkdir(&undodir, "p")
 endif
+
+" clipboard enable
+set clipboard=unnamed
 
 " ============================================================================
 " Plugins settings and mappings
