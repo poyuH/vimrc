@@ -78,8 +78,6 @@ Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 " Git/mercurial/others diff icons on the side of the file lines
 Bundle 'mhinz/vim-signify'
-" Automatically sort python imports
-Bundle 'fisadev/vim-isort'
 " Drag visual blocks arround
 Bundle 'fisadev/dragvisuals.vim'
 " Window chooser
